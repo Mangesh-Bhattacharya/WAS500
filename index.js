@@ -19,8 +19,7 @@ const server = http.createServer((_req, res) => {
     });
 });
 
-// import css file into index.js server
-const css = fs.readFileSync('styles.css', 'utf8');
+// import 
 
 
 
