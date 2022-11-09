@@ -4,7 +4,7 @@ const hostname = 'localhost'
 const fs = require('fs');
 const port = 3000;
 
-const server = http.createServer((req, res) => {
+const server = http.createServer((_req, res) => {
     res.writeHead(200, {
         'Content-Type': 'text/html',
     })
@@ -18,6 +18,11 @@ const server = http.createServer((req, res) => {
         res.end()
     });
 });
+
+// import css file into index.js server
+const css = fs.readFileSync('styles.css', 'utf8');
+
+
 
 server.listen(port, function (error) {
     if (error) {
