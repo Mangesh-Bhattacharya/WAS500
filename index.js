@@ -19,7 +19,8 @@ const server = http.createServer((_req, res) => {
     });
 });
 
-// import 
+// import html file book list.hml into index.js
+const bookList = require('./Book List.html');
 
 
 
