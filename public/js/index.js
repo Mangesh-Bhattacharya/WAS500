@@ -8,7 +8,7 @@ const server = http.createServer((_req, res) => {
     res.writeHead(200, {
         'Content-Type': 'text/html',
     })
-    fs.readFile('index.html', function (error, data) {
+    fs.readFile('Server_html/views/index.html', function (error, data) {
         if (error) {
             res.writeHead(404)
             res.write('Error: File Not Found')
@@ -18,11 +18,6 @@ const server = http.createServer((_req, res) => {
         res.end()
     });
 });
-
-// import html file book list.hml into index.js
-const bookList = require('./Book List.html');
-
-
 
 server.listen(port, function (error) {
     if (error) {
