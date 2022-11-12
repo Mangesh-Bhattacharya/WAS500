@@ -1,33 +1,36 @@
-var http = req('http');
-var fs = req('fs');
+// connect to localhost:3000
+const http = require('http');
+const fs = require('fs');
 
-var server = http.createServer(function (req, res) {
-    console.log('request was made: ' + req.url);
-    if (req.url === '/home' || req.url === '/') {
+const server = http.createServer((_req, res) => {
+    console.log('request was made: ' + _req.url);
+    if (/* Checking if the url is equal to index or if it is equal to nothing. */
+        _req.url === '/index' || _req.url === '/') {
         res.writeHead(200, {
             'Content-Type': 'text/html'
         });
-        fs.createReadStream(__dirname + 'Server_html/views/index.html').pipe(res);
-    } else if (req.url === '/books') {
+        fs.createReadStream(__dirname + '/views/index.html').pipe(res);
+    } else if (_req.url === '/books') {
         res.writeHead(200, {
             'Content-Type': 'text/html'
         });
-        fs.createReadStream(__dirname + 'Server_html/views/books.html').pipe(res);
-    } else if (req.url === '/book1') {
+        fs.createReadStream(__dirname + '/views/books.html').pipe(res);
+    } else if (_req.url === '/book1') {
         res.writeHead(200, {
             'Content-Type': 'text/html'
         });
-        fs.createReadStream(__dirname + 'Server_html/views/book1.html').pipe(res);
-    } else if (req.url === '/book2') {
+        fs.createReadStream(__dirname + '/views/book1.html').pipe(res);
+    } else if (_req.url === '/book2') {
         res.writeHead(200, {
             'Content-Type': 'text/html'
         });
-        fs.createReadStream(__dirname + 'Server_html/views/book2.html').pipe(res);
-    } else if (req.url === '/book3') {
+        fs.createReadStream(__dirname + '/views/book2.html').pipe(res);
+    } else if (_req.url === '/book3') {
         res.writeHead(200, {
             'Content-Type': 'text/html'
         });
-        fs.createReadStream(__dirname + 'Server_html/views/book3.html').pipe(res);
+        fs.createReadStream(__dirname + '/views/book3.html').pipe(res);
+        res.end();
     }
 });
 
