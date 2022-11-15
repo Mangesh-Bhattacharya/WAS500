@@ -1,38 +1,40 @@
-// connect to localhost:3000
-const http = require('http');
 const fs = require('fs');
+const { GET } = require('http');
+const { POST } = require('http');
 
-const server = http.createServer((_req, res) => {
-    console.log('request was made: ' + _req.url);
-    if (/* Checking if the url is equal to index or if it is equal to nothing. */
-        _req.url === '/index' || _req.url === '/') {
-        res.writeHead(200, {
-            'Content-Type': 'text/html'
-        });
-        fs.createReadStream(__dirname + '/views/index.html').pipe(res);
-    } else if (_req.url === '/books') {
-        res.writeHead(200, {
-            'Content-Type': 'text/html'
-        });
-        fs.createReadStream(__dirname + '/views/books.html').pipe(res);
-    } else if (_req.url === '/book1') {
-        res.writeHead(200, {
-            'Content-Type': 'text/html'
-        });
-        fs.createReadStream(__dirname + '/views/book1.html').pipe(res);
-    } else if (_req.url === '/book2') {
-        res.writeHead(200, {
-            'Content-Type': 'text/html'
-        });
-        fs.createReadStream(__dirname + '/views/book2.html').pipe(res);
-    } else if (_req.url === '/book3') {
-        res.writeHead(200, {
-            'Content-Type': 'text/html'
-        });
-        fs.createReadStream(__dirname + '/views/book3.html').pipe(res);
-        res.end();
+const customReadFile = (fpath, res) => {
+    fs.readFile(`./${fpath}`, (errors, data) => {
+        if (errors) {
+            console.log('Error locating the file ', fpath);
+        }
+        res.end(data);
+    });
+};
+
+const httpStatus = require('http-status-codes');
+html_Content_type = {
+    "Content-Type": "text/html",
+};
+
+const rtr = {
+    GET: {},
+    POST: {},
+
+};
+
+exports.hdl = (req, res) => {
+    try {
+        rtr[req.method][req.url](req, res);
+    } catch (e) {
+        res.writeHead(httpStatus.StatusCodes.NOT_FOUND);
+        res.end('Content not found');
     }
-});
+};
 
-server.listen(3000, 'localhost');
-console.log('Now listening to port 3000');
+exports.get = (url, action) => {
+    rtr["GET"][url] = action;
+};
+
+exports.post = (url, action) => {
+    rtr["POST"][url] = action;
+};
