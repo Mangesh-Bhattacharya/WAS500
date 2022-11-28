@@ -7,7 +7,7 @@ exports.getallbooks = (res, req, next) => {
         }
         req.data = books;
         req.data.sort((m, b) => {
-            return m.catalogs - b.catalogs;
+            return m.series - b.series;
         });
         next();
     });
