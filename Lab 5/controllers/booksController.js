@@ -1,19 +1,15 @@
 const books = require("../models/Books");
 
-exports.getallbooks = (res, req, next) => {
-    books.find({}, (books, error) => {
-        if (error) {
-            return next(error);
-        }
+module.exports.getallbooks = (req, res, next) => {
+    books.find({}, (error, books) => {
+        if (error) next(error);
         req.data = books;
-        req.data.sort((m, b) => {
-            return m.series - b.series;
-        });
+        console.log(books);
         next();
     });
 };
 
-exports.getbook = (res, req, next) => {
+module.exports.getbook = (req, res, next) => {
     let parameters_booksid = req.parameters_books;
     books.find({ _id: parameters_booksid }, (books, error) => {
         if (error) {

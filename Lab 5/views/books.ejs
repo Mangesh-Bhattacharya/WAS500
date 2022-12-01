@@ -1,0 +1,18 @@
+<% books.forEach(info=>
+    { %>
+    <div class="body">
+        <table>
+            <tr>
+                <td style="width: 30%;"><a href="./books"><img src="../public/images/<%- info.cover %>"
+                            style="max-width: 80%; max-height: 80%;"></a></td>
+                <td style="width: 80%;"><a href="./books/<%- info.id %>">
+                        <h2>
+                            <%- info.title %>
+                        </h2>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <% }); %>
