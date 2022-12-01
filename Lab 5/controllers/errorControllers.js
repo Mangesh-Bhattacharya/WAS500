@@ -14,7 +14,6 @@ exports.respondNoResourceFound = (req, res) => {
 
 exports.respondInternalError = (error, req, res, next) => {
     let errorCode = httpStatus.StatusCodes.INTERNAL_SERVER_ERROR;
-    console.log(`ERROR occurred: ${error.stack}`);
     res.status(errorCode);
     res.send(`${errorCode} | Sorry, our application is experiencing a problem!`);
 };
