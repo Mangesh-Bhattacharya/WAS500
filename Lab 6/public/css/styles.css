@@ -1,0 +1,186 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    position: static;
+}
+
+.navbar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 1;
+    left: 1;
+    background-color: rgba(0, 0, 0, 0.849);
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.navbar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #131313ce;
+    display: block;
+}
+
+.navbar a:hover {
+    border-left: 1px solid rgb(152, 255, 138);
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
+.main_box {
+    margin-left: 160px;
+    font-size: 100%;
+    padding: 40px;
+    padding-left: 240px;
+    padding-right: 150px;
+}
+
+.navbar a {
+    color: #fff;
+    font-size: 27px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 20px 20px 20px 40px;
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.308);
+}
+
+.navbar a {
+    margin-top: 35px;
+    padding: 14px 20px 14px 40px;
+}
+
+.navbar a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+a {
+    list-style: none;
+}
+
+button {
+    color: rgb(0, 0, 0);
+    padding: 14px 20px;
+    background-color: lightseagreen;
+    margin: 8px 0;
+    border: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 20%;
+    transition: ease-in-out;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    opacity: 0.8;
+    border-style: double;
+    border-color: rgb(111, 0, 255);
+    font-weight: bold;
+    font: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+input[type=text] {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    box-sizing:content-box;
+}
+
+input[type=text]:focus {
+    background-color: lightblue;
+}
+
+table.admin {
+    max-width: 70%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+table.admin tr {
+    border-color: black;
+}
+
+table.admin td {
+    padding: 20px 30px 20px 70px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+table.admin input[type=text]{
+    width: 98%;
+    padding: 15px 5px 7px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(7, 7, 7);
+    border-radius: 4px;
+    box-sizing:content-box;
+    table-layout: fixed;
+}
+
+table.admin th {
+    font-size: .95em;
+    letter-spacing: .1em;
+    text-transform: lowercase;
+    padding: 20px 30px 20px 70px;
+    text-align: center;
+    border: 2px solid black;
+}
+
+table.admin button{
+    width: 100%;
+    background-color: lightseagreen;
+    color: rgb(0, 0, 0);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: bold;
+    border-color: blueviolet ;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit] {
+    width: 30%;
+    font-size: .95em;
+    background-color: lightseagreen;
+    color: rgb(0, 0, 0);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: bold;
+    border-color: blueviolet ;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    opacity: 0.8;
+    border-style: double;
+    border-color: rgb(111, 0, 255);
+    font-weight: bold;
+    font: bold;
+    font-size: 20px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+
+.body{
+    padding: 15px 20px;
+    margin: 50px;
+    font-family: 'Open Sans', sans-serif;
+}
+

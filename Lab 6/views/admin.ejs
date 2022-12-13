@@ -1,0 +1,52 @@
+<div class="body" style="padding: 0px;">
+    <div class="admin">
+        <h1>Admin</h1>
+        <br>
+        <table class="admin">
+            <thread>
+                <tr>
+                    <th class="admin">
+                        <h3>Id</h3>
+                    </th>
+                    <th class="admin">
+                        <h3>name</h3>
+                    </th>
+                    <th class="admin">
+                        <h3>author</h3>
+                    </th>
+                    <th class="admin">
+                        <h3>Edit</h3>
+                    </th>
+                    <th class="admin">
+                        <h3>Delete</h3>
+                    </th>
+                </tr>
+            </thread>
+            <tbody>
+                <% books.forEach(info=>
+                    { %>
+                    <tr>
+                        <td class="admin"><a href="./books/<%= books.title %>">
+                                <%= books.title %>
+                            </a></td>
+                        <td class="admin"><a href="./books/<%= info.name %>">
+                                <%= info.name %>
+                            </a></td>
+                        <td class="admin"><%- info.author %></a></td>
+                        <td class="admin">
+                            <%= books.edit %>
+                                <button onclick="doc.loc='./edit/<%= books.id %>'"><i class="edit">Edit</i>
+                                </button>
+                        </td>
+                        <td class="admin">
+                            <%= books.delete %>
+                                <button
+                                    onclick="if(confirm('Are you willing to the lose your progress?')){doc.loc='./books/<%= books.id %>/Delete?_method=Delete'}else{return false;}"><i
+                                        class="delete">Delete</i> </button>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+    </div>
+</div>
